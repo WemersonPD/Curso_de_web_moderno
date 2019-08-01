@@ -1,0 +1,106 @@
+<h1>Lista aninhada</h1>
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<style>
+.hide{display: none}
+.app{display: none}
+.config{display: none}
+</style>
+<ul class="tree">
+    <li>
+        <span class="top top-back">backend</span> 
+        <ul class="hide hide-back">
+            <li>
+                <span class='dentro dentro-app'>App</span>
+                <ul class='app'>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span class="dentro dentro-config">config</span>
+                <ul class="config">
+                    <li>banco,js</li>
+                    <li>rotas.js</li>
+                    <li>Servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+
+        <span class="top top-front">frontend</span>
+        <ul class="hide hide-front">
+            <li>
+                <span >public</span>
+                <ul class="hide hide-public">
+                    <li>app.css</li>
+                    <li>app.js</li> 
+                    <li>index.html</li>
+                </ul>
+            </li>
+            <li>
+                <span >private </span>
+                <ul class= 'hide hide-class'>
+                    <li>login.js</li>
+                    <li>teste.js</li>
+                    <li>bora.js</li>
+                </ul>
+            </li>
+
+
+            
+        </ul>
+    </li>
+</ul> 
+
+<script>
+    document.querySelectorAll('.top').forEach(folder => {
+        folder.onclick = function (e) {
+           if(folder.classList[1] === 'top-back'){
+               if(document.querySelector('.hide-back').style.display === 'block'){
+                document.querySelector('.hide-back').style.display = 'none'
+               }else{
+                document.querySelector('.hide-back').style.display = 'block'
+                
+              
+               }
+               document.querySelector('.hide-front').style.display = 'none'
+
+           }else if(folder.classList[1] === 'top-front'){
+            if(document.querySelector('.hide-front').style.display === 'block'){
+                document.querySelector('.hide-front').style.display = 'none'
+               }else{
+                document.querySelector('.hide-front').style.display = 'block'
+               }
+            document.querySelector('.hide-back').style.display = 'none'
+           }
+            
+        }
+    })
+
+    document.querySelectorAll('.dentro').forEach(dir => {
+        dir.onclick = function (i){
+            
+            if(dir.classList[1] === 'dentro-app'){
+                if(document.querySelector('.app').style.display === 'block'){
+                    document.querySelector('.app').style.display = 'none'
+                }else{
+                    document.querySelector('.app').style.display = 'block'
+                    document.querySelector('.config').style.display = 'none'
+                }
+            }else if(dir.classList[1] === 'dentro-config'){
+                if(document.querySelector('.config').style.display === 'block'){
+                    document.querySelector('.config').style.display = 'none'
+                }else{
+                    document.querySelector('.config').style.display = 'block'
+                    document.querySelector('.app').style.display = 'none'
+                } 
+            }
+            
+            //Falta para frontend
+        
+    }
+})
+</script>

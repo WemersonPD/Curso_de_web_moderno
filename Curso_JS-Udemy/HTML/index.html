@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicios HTML</title>
+    <style>
+        #Conteudo {
+            padding: 50px, opx
+        }
+    </style>
+</head>
+
+<body>
+    <header>Exercicios HTML</header>
+    <nav>
+        <a href="Exercicios/teste.html">00 - Teste </a> |
+        <a href='Exercicios/texto1.html'>01 - Texto 1 </a> |
+        <a href="Exercicios/testo2.html">02 - Texto 2</a> |
+        <a href="Exercicios/listas1.html">03 - Lista 1</a> |
+        <a href="Exercicios/listaAninhada.html">04 - Lista aninhada</a> |
+        <a href="Exercicios/links.html">05 - LINKS</a> |
+        <a href="Exercicios/tabela.html">06 - TABELA</a>
+        <a href="Exercicios/form/form.html">07 - formulario</a>
+    </nav>
+    <section id='Conteudo'>Vai Aparecer aqui! </section>
+    <br>
+    <footer>conteudo html</footer>
+    <script>
+        //Por o querySelectorAll retorna uma lista com os elementos que contenham a tag informada, utiliza-se um forEach pra navegar dentro desta função pegando cada um dos links 
+
+        document.querySelectorAll('a').forEach(link => {
+            console.log(link)
+
+            //Pegando o <section> por o id que foi informado
+            const Conteudo = document.getElementById('Conteudo')
+
+            //Quando for clicado em algum link
+            link.onclick = function(e) {
+                console.log(link)
+
+                //Cancela o que normalmente iria acontecer (ir para outra pag quando clicado no link), porém não faz com que pare de funcionar
+                e.preventDefault()
+
+                //Faz requisição ajax
+                fetch(link.href)
+                    //Coleta a parte html do elemento expecificado e retorna para um valor textual
+                    .then(resp => resp.text())
+                    //A variavel conteudo, vai receber o valor de html, e será exibido na pag
+                    .then(html => Conteudo.innerHTML = html)
+            }
+        })
+    </script>
+
+</body>
+
+</html>

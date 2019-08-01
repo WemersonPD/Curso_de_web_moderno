@@ -1,0 +1,92 @@
+HTML:
+    class: (Uma classe referencia varios elementos):
+        Uma classe é referenciada por: .nomeDaClasse;
+        Dentro de um elemento pode ser utilizado mais de uma classe, e oque difere uma pra a outra é um espaço;
+    id: (Referencia um unico elemento):
+        Um id é referenciado por um: #nomeDoId
+    
+    
+    tabela:
+        comandos:
+            <tag colspan='numero decoluna'> </tag> //O numero de colunas que o elemento ira ficar
+            <tag rowspan="2"> </tag>  //O numero de linhas que o elemento ira ficar
+        
+        <caption>Produtos:</caption> //Titulo da tabela, não é obrigatorio;
+        <thead> comandos</thead> //Cabeça da tabela;
+            comandosTHEAD:
+                <tr> comandoTR </tr> //uma linha da tabela
+                    comandoTR:
+                        <th> </th> //A nomeclatura de um dos elementos da tabela
+        <tbody> comandosTBODY </tbody>
+            comandosTBODY:
+                <tr> comandoTR </tr> //uma linha da tabela
+                    comandoTR:
+                        <td> </td> //O nome de um elementos da tabela
+        <tfoot>comandosTFOOT </tfoot>
+            comandosTFOOT:
+                <tr> comandoTR </tr> ultima linha de informação da tabela, pode ter mais de umalinha(ex: total)
+                    comandoTR:
+                        <td colspan='numero_de_colunas'> elemento </td> //elemento por linhas
+    
+
+    links:
+        <a href="link" target="_blank">Google 2</a>  //abrir um link em uma nova pag em branco
+        <a href="index.html">Volta 1</a>  <br /> <!--troca o folder/local_tual por folder/index.html, caso o elemento estiver dentro da pasta, ira acessa-lo-->
+        <a href="/index.html" target="_blank">Volta 2</a> <br /> <!--Volta a pasta raiz da app e procurar por o elemento informado-->
+        <a href="../index.html" target="_blank">Volta 3</a> <br>  <br><!--volta uma pasta e procura por o elemento informado-->
+        <a href="mailto:email">Entre em contato</a> //envia um email para o email informado
+        <a href="#noticia">Vai para o id==noticia</a> //lik ancora, Na pagina atual procura um elemento com o id noticia e vai pra ele;
+
+        comandos:
+            -target="_blank" //abre o link em uma pag em branco
+            -mailto:email //envia um email para o email informado
+            -href="link.html" //procura a pasta atual um elemento com o nome informado
+            -href="/link.html" //procura na pasta raiz o elemento informado
+            -href="../link.html" //procura na pasta anterior o elemento informado
+            -href="#noticia" //Procura na pagina atual um elemento com o id noticia e vai até ele
+
+
+    tag:
+        <nav letra href='url'>Como o link ira aparecer na pagina</nav>  //Coloca um link na pag, no qual entre a abetura e fechamento da tag aparece como ele ira aparece na pag
+        <footer> Mensagem </flooter>  //Fica na parte inferior da pagina, pra indicar direitor autorais ou a indentidade da pag;
+        <hr />  //Cria uma linha orizontal na pagina 
+        <br />  //Quebra linha
+        <i />   //Italico
+        <b />   //Negrito
+        <strong>Trecho mais forte </strong>  //Trecho do texto que fica mais forte, destacado, (por padrâo: negrito)
+        <em>Trecho que temos que dar enfaze </em>  //Trecho que fica mais infatizado (por padrão: italico)
+        <blockquote cite='url'> CItação longa </blockquote>  //Essa citação vai se distancias do resto do paragrafo
+        <q>Citação curta</q>  //Citação curta, normalmente entre aspas
+        <abbr>Prof</abbr> Aislan   //ABreviação
+        <cite>Livro bem legal</cite> definiumais precisamente bla bla .....  //Citação (Não muito legal pra nome, mas pra obras!
+        <dfn>BUraco negro</dfn>, engole tudo que ver pela a frente  //DEFINIÇÃO DE ALGO
+        <address>Rua oscar niemayer, n<sup>0</sup>: 10</address>  //Endereço
+        <del> trecho </del>  //Passa um traço no trecho pra marca como incorreto
+        <ins> Trecho </ins>  //Sublima o trecho pra marca como correto
+        <s> Trecho </s>  //Marca o trecho como incorreto (exp: preço antigo)
+        <ol> <li>Lista ordenada</li> </ol>  //Lista ordenada (ol) (Aparece 1, 2, 3 na frente de cada elemento)
+        <ul> <li>Lista desordenada</li> </ul> //Lista desordenada (ul) (aparee um ponto na frente de cada elementop)
+        <dl>Lista de definição </dl> //Lista de definição
+            <dt>Termo em definição </dt> //Termo em definição
+            <dd>Defininção dele</dd> //Definição dele
+        <span chave> trecho </span>   //Uilizado pra pode chamar determinado elemento ou elementos em um JS ou css
+        
+
+
+    Servidor (http-server) comandos
+        http-server .       //Inicia um servidor com a pag atual, na porta 8080
+        http-server -p 9090 .   //Inicia um servidor no número da porta que você quiser, no caso 9090
+        http-server -c-1 .   //Tira todo o cache do servidor (valores anteriores de algumas coisas)
+        
+
+    Extra:
+        control +  barra //Para um linha de code se tornar comentario
+
+
+
+
+DOOM:
+    .querySelectorAll('Tag')  //Tranforma em um node list, um conjunto de elementos com a mesma tag
+    .getElementeById(id)     //Pega determinado elemento por ser referido id
+    .preventDefault   //Faz com que determinado elemento (link por exemplo) não saia da pag atual, porém mantem sua execução
+    targer="_blank"  //Diz que o determinado elemento, será exibido em uma nova aba;
